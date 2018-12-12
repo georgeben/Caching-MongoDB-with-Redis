@@ -2,6 +2,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const logger = require('morgan');
 
+//Routes
+const indexRouter = require('./routes/index');
+
 const port = 3000;
 const dbUrl = 'mongodb://localhost:27017/local-library';
 mongoose.connect(dbUrl, {
@@ -16,9 +19,7 @@ const app = express();
 
 app.use(logger('dev'));
 
-app.get('/', (req, res) =>{
-    res.send('Hello world');
-});
+app.use('/', indexRouter);
 
 app.use((req, res, next) => {
     res.send('The page you are trying to view doesnt exist');
