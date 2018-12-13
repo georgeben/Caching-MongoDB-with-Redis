@@ -22,3 +22,7 @@ module.exports.findBook = (name, callback) => {
         name: name,
     }, callback)
 }
+
+module.exports.findAllBooks = (callback) => {
+    Book.find({}, callback)
+}
