@@ -17,6 +17,7 @@ const bookSchema = new mongoose.Schema({
 
 const Book = mongoose.model('Books', bookSchema);
 
+
 module.exports.findBook = (name, callback) => {
     Book.findOne({
         name: name,
@@ -25,4 +26,27 @@ module.exports.findBook = (name, callback) => {
 
 module.exports.findAllBooks = (callback) => {
     Book.find({}, callback)
+}
+
+module.exports.findBookCached = (redis, title, callback) => {
+    redis.get(title, (err, response) => {
+        if(err){
+            callback(null)
+        }else if(response) {
+            callback(JSON.parse(response))
+        }else{
+            Book.findOne({
+                title: title,
+            }, (err, data) => {
+                if(err) {
+                    console.log('Not found in the db');
+                    callback(null)
+                }else{
+                    redis.set(title, JSON.stringify(data), () => {
+                        callback(data)
+                    })
+                }
+            })
+        }
+    })
 }
