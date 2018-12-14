@@ -5,7 +5,6 @@
 </head>
 <body>
     <h1>Welcome to the library</h1>
-</body>
     <form method='GET' action = '/search' >
         <input type="text" placeholder="Search for a book" name="title" >
         <input type="submit" value="Search" >
@@ -14,4 +13,6 @@
     <% books.forEach((book) => { %>
         <p><%= book.title %> </p>
     <% }) %>
+</body>
+    
 </html>
