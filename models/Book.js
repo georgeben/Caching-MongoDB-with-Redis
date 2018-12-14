@@ -31,6 +31,7 @@ module.exports.findAllBooks = (callback) => {
 module.exports.findBookCached = (redis, title, callback) => {
     redis.get(title, (err, response) => {
         if(err){
+            console.log("Book was not found in")
             callback(null)
         }else if(response) {
             callback(JSON.parse(response))

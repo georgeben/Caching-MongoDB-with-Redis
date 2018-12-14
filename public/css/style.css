@@ -1,0 +1,68 @@
+body{
+    background-color: #e9ebee;
+}
+
+header{
+    background-color: #1e407f;
+    color: white;
+    padding: 10px 0;
+}
+
+header nav{
+    width: 100%;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+
+.logo{
+    font-size: 2em;
+}
+
+header nav ul form{
+    margin-left: 150px;
+}
+
+header nav ul form input[type="text"]{
+    padding: 3px;
+}
+
+.container{
+    display: flex;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 20px;
+}
+
+.side-nav{
+    background-color: #fff;
+    width: 28%;
+    margin-right: 2%;
+}
+
+.side-nav ul{
+    list-style-type: none;
+    padding: 5px 5px 0 5px;
+}
+
+.side-nav ul li{
+    padding: 8px;
+    border-bottom: 1px solid #1e407f;
+}
+
+.container main{
+    width: 90%;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.book{
+    border-bottom: 1px solid #1e407f31;
+    margin-bottom: 10px;
+}

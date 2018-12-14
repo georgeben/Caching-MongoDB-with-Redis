@@ -8,7 +8,7 @@ const bookModel = require('../models/Book');
 router.get('/', (req, res) =>{
     bookModel.findAllBooks((err, books) => {
         if(err){
-            res.send('SFailed to fetch books')
+            res.send('Failed to fetch books')
         }
         res.locals.books = books;
         res.render("index");

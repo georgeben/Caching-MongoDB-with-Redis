@@ -2,17 +2,46 @@
 <html>
 <head>
     <title>Home page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="css/style.css" >
 </head>
 <body>
-    <h1>Welcome to the library</h1>
-    <form method='GET' action = '/search' >
-        <input type="text" placeholder="Search for a book" name="title" >
-        <input type="submit" value="Search" >
-    </form>
-
-    <% books.forEach((book) => { %>
-        <p><%= book.title %> </p>
-    <% }) %>
+    <header>
+        <nav>
+            <ul>
+                <li class="logo">Bookworm</li>
+                <li>
+                    <form method='GET' action = '/search' >
+                        <input type="text" placeholder="Search for a book" name="title" >
+                        <input type="submit" value="Search" >
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <div class="side-nav" >
+            <ul>
+                <li>Science</li>
+                <li>Politics</li>
+                <li>History</li>
+                <li>Novels</li>
+                <li>Religious</li>
+                <li>Educational</li>
+            </ul>
+        </div>
+        <main>
+            <% books.forEach((book) => { %>
+                <div class="book">
+                    <h2><%= book.title %> </h2>
+                    <p><%= book.author %></p>
+                    <p><%= book.description %></p>
+                </div>
+            <% }) %>
+        </main>
+    </div>
+   
 </body>
     
 </html>

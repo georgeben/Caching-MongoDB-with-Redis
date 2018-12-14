@@ -27,6 +27,8 @@ app.use(logger('dev'));
 app.use(bps.urlencoded({extended:false}));
 app.use(bps.json());
 
+app.use(express.static(path.resolve(__dirname, "public")));
+
 app.set("views", path.resolve(__dirname, "views"));
 app.set("view engine", "ejs");
 
