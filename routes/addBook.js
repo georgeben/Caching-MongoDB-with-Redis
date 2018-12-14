@@ -31,7 +31,8 @@ router.post('/', (req, res) => {
             res.send('Something bad happened')
         }else{
 
-            res.send('Added successfully '+ success);            
+            // res.send('Added successfully '+ success);   
+            res.redirect('/')         
         }
 
     })

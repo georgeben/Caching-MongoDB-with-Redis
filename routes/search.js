@@ -12,7 +12,8 @@ router.get('/', (req, res) =>{
             console.log('Book not found');
             res.status(500).send('Search failed')
         }else{
-            res.status(200).send(book)
+            res.locals.book = book;
+            res.render("searchResults");
         }
     })
 })

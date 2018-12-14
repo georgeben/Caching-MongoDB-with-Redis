@@ -2,14 +2,24 @@
 <html>
 <head>
     <title>Add books</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="css/style.css" >
 </head>
 <body>
-    <h1>Welcome to the library</h1>
-</body>
-    <form method='POST' >
-        <input type='text' name='title' placeholder = 'Enter title' >
-        <input type='text' name='author' placeholder = 'Enter author' >
-        <input type='text' name='desc' placeholder = 'Enter description' >
+    <form method='POST' class="add-book" >
+        <h3>Add a book</h3>
+        <div class="form-group">
+            <input type='text' class="form-control" name='title' placeholder = 'Enter title' >
+        </div>
+
+        <div class="form-group" >
+            <input type='text' class="form-control" name='author' placeholder = 'Enter author' >
+        </div>
+        <div class="form-group" >
+            <input type='text' class="form-control" name='desc' placeholder = 'Enter description' >
+        </div>
+        
         <input type='submit' value='Add book'>
     </form>
+</body>
 </html>
